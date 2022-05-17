@@ -1,0 +1,76 @@
+<?php
+
+
+class CategoriaDAO
+{
+    private $conexao;
+
+
+     
+    public function __construct()
+    {
+        
+        $dsn = "mysql:host=localhost:3306;dbname=db_mvc";
+        $this->conexao = new PDO($dsn, 'root', 'cajuru@2022');
+    }
+
+     public function insert(CategoriaModel $model)
+    {
+        
+        $sql = "INSERT INTO Categoria (nome, Comidas, Bebidas) VALUES (?, ?, ?) ";
+        $stmt = $this->conexao->prepare($sql);
+
+
+        
+        $stmt->bindValue(1, $model->nome);
+        $stmt->bindValue(2, $model->Comidas);
+        $stmt->bindValue(3, $model->Bebidas);
+        $stmt->execute();
+    }
+
+    public function update(CategoriaModel $model)
+    {
+        $sql = "UPDATE Categoria SET nome=?, Comidas=?, Bebidas=? WHERE id=? ";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $model->nome);
+        $stmt->bindValue(2, $model->Comidas);
+        $stmt->bindValue(3, $model->Bebidas);
+        $stmt->bindValue(4, $model->id);
+        $stmt->execute();
+    }
+
+
+    
+    public function select()
+    {
+        $sql = "SELECT * FROM Categoria ";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_CLASS);        
+    }
+
+    public function selectById(int $id)
+    {
+        include_once 'Model/CategoriaModel.php';
+
+        $sql = "SELECT * FROM Categoria WHERE id = ?";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+
+        return $stmt->fetchObject("CategoriaModel"); 
+    }
+
+    public function delete(int $id)
+    {
+        $sql = "DELETE FROM Categoria WHERE id = ? ";
+
+        $stmt = $this->conexao->prepare($sql);
+        $stmt->bindValue(1, $id);
+        $stmt->execute();
+    }
+}

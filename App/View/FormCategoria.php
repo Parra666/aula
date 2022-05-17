@@ -20,12 +20,6 @@
             <label for="nome">Nome:</label>
             <input id="nome" name="nome" value="<?= $model->nome ?>" type="text" />
 
-            <label for="data_fabricacao">:</label>
-            <input id="datafabri" name="data de fabrição" value="<?= $model->data ?>" type="date" />
-
-            <label for="data_validade">Data Nascimento:</label>
-            <input id="data_nascimento" value="<?= $model->data_nascimento ?>" name="data_nascimento" type="date" />
-
             <button type="submit">Salvar</button>
         </form>
     </fieldset>

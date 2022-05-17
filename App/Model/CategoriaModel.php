@@ -11,7 +11,7 @@ class CategoriaModel
      * Declaração das propriedades conforme campos da tabela no banco de dados.
      * para saber mais sobre Propriedades de Classe, leia: https://www.php.net/manual/pt_BR/language.oop5.properties.php
      */
-    public $id, $nome, $cpf, $data_nascimento;
+    public $id, $nome, $Comidas, $Bebidas ;
 
 
     /**

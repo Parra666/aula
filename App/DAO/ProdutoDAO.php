@@ -12,8 +12,6 @@ class ProdutoDAO
     {
         
         $dsn = "mysql:host=localhost:3306;dbname=db_mvc";
-
-        
         $this->conexao = new PDO($dsn, 'root', 'cajuru@2022');
     }
 
@@ -22,10 +20,7 @@ class ProdutoDAO
     public function insert(ProdutoModel $model)
     {
         
-        $sql = "INSERT INTO Produto (nome, cpf, data_nascimento) VALUES (?, ?, ?) ";
-
-
-        
+        $sql = "INSERT INTO Produto (nome, Data_fabricacao, data_validade) VALUES (?, ?, ?) ";
         $stmt = $this->conexao->prepare($sql);
 
 
@@ -38,11 +33,9 @@ class ProdutoDAO
         $stmt->execute();
     }
 
-
-    
-    public function update(ProdutoModel $model)
+       public function update(ProdutoModel $model)
     {
-        $sql = "UPDATE Produto SET nome=?, cpf=?, data_nascimento=? WHERE id=? ";
+        $sql = "UPDATE Produto SET nome=?, Data_fabricacao=?, data_validade=? WHERE id=? ";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $model->nome);
@@ -52,9 +45,7 @@ class ProdutoDAO
         $stmt->execute();
     }
 
-
-    
-    public function select()
+      public function select()
     {
         $sql = "SELECT * FROM Produto ";
 
