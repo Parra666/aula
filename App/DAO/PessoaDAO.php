@@ -10,8 +10,8 @@ class PessoaDAO
     public function __construct()
     {
         
-        $dsn = "mysql:host=localhost:3306;dbname=db_mvc";
-        $this->conexao = new PDO($dsn, 'root', 'cajuru@2022');
+        $dsn = "mysql:host=localhost:3307;dbname=db_mvc";
+        $this->conexao = new PDO($dsn, 'root', 'etecjau');
     }
 
      public function insert(PessoaModel $model)
