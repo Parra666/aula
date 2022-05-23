@@ -10,6 +10,9 @@ switch($url)
         echo "página inicial";
     break;
 
+    
+    
+    
     case '/pessoa':
         
         PessoaController::index();
@@ -30,46 +33,63 @@ switch($url)
     default:
         echo "Erro 404";
     break;
+   
+   
+    case '/':
+        echo "página inicial";
+    break;
 
-case '/produto':
+    
+    
+    
+    case '/pessoa':
         
-    produtocontroller::index();
-break;
+        produtocontroller::index();
+    break;
 
-case '/produto/form':
-    produtocontroller::form();
-break;
+    case '/pessoa/form':
+        produtocontroller::form();
+    break;
 
-case '/produto/form/save':
-    produtocontroller::save();
-break;
+    case '/pessoa/form/save':
+        produtocontroller::save();
+    break;
 
-case '/produto/delete':
-    produtocontroller::delete();
-break;
+    case '/pessoa/delete':
+        produtocontroller::delete();
+    break;
 
-default:
-    echo "Erro 404";
-break;
+    case '/':
+        echo "página inicial";
+    break;
 
-case '/categorias':
+    
+    
+    
+    case '/pessoa':
         
-    CategoriasController::index();
-break;
+        CategoriasController::index();
+    break;
 
-case '/categoria/form':
-    categoriasController::form();
-break;
+    case '/categoria/form':
+        CategoriasController::form();
+    break;
 
-case '/categoria/form/save':
-    CategoriasController::save();
-break;
+    case '/categoria/form/save':
+        CategoriasController::save();
+    break;
 
-case '/categoria/delete':
-    PessoaController::delete();
-break;
+    case '/categoria/delete':
+        categoriasController::delete();
+    break;
 
-default:
-    echo "Erro 404";
-break;
+    
 }
+
+
+
+
+
+
+
+
