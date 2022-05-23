@@ -14,9 +14,7 @@ class CategoriasController
         include 'View/modules/Categoria/ListaCategoria.php'; 
     }
 
-
-   
-    public static function form()
+     public static function form()
     {
         include 'Model/CategoriaModel.php'; 
         $model = new CategoriaModel();
@@ -34,8 +32,7 @@ class CategoriasController
 
        $model->id =  $_POST['id'];
        $model->nome = $_POST['nome'];
-       $model->nome = $_POST['Comidas'];
-       $model->nome = $_POST['Bebidas'];
+    
         $model->save(); 
 
        header("Location: /Categoria"); 

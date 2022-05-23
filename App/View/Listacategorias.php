@@ -25,7 +25,7 @@
             <td><?= $item->id ?></td>
 
             <td>
-                <a href="/Produto/form?id=<?= $item->id ?>"><?= $item->nome ?></a>
+                <a href="/Categoria/form?id=<?= $item->id ?>"><?= $item->nome ?></a>
             </td>
         </tr>
         <?php endforeach ?>

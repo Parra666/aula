@@ -30,4 +30,46 @@ switch($url)
     default:
         echo "Erro 404";
     break;
+
+case '/produto':
+        
+    produtocontroller::index();
+break;
+
+case '/produto/form':
+    produtocontroller::form();
+break;
+
+case '/produto/form/save':
+    produtocontroller::save();
+break;
+
+case '/produto/delete':
+    produtocontroller::delete();
+break;
+
+default:
+    echo "Erro 404";
+break;
+
+case '/categorias':
+        
+    CategoriasController::index();
+break;
+
+case '/categoria/form':
+    categoriasController::form();
+break;
+
+case '/categoria/form/save':
+    CategoriasController::save();
+break;
+
+case '/categoria/delete':
+    PessoaController::delete();
+break;
+
+default:
+    echo "Erro 404";
+break;
 }

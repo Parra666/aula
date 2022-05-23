@@ -6,37 +6,27 @@ class PessoaController
     
     public static function index()
     {
-        include 'Model/PessoaModel.php'; // inclusão do arquivo model.
+        include 'Model/PessoaModel.php'; 
+        $model = new PessoaModel(); 
+        $model->getAllRows(); 
 
-        $model = new PessoaModel(); // Instância da Model
-        $model->getAllRows(); // Obtendo todos os registros, abastecendo a propriedade $rows da model.
-
-        include 'View/modules/Pessoa/ListaPessoa.php'; // Include da View, propriedade $rows da Model pode ser acessada na View
+        include 'View/modules/Pessoa/ListaPessoa.php'; 
     }
 
-
-    /**
-     * Devolve uma View contendo um formulário para o usuário.
-     */
     public static function form()
     {
-        include 'Model/PessoaModel.php'; // inclusão do arquivo model.
+        include 'Model/PessoaModel.php'; 
         $model = new PessoaModel();
 
-        if(isset($_GET['id'])) // Verificando se existe uma variável $_GET
-            $model = $model->getById( (int) $_GET['id']); // Typecast e obtendo o model preenchido vindo da DAO.
+        if(isset($_GET['id'])) 
+            $model = $model->getById( (int) $_GET['id']); 
 
-        include 'View/modules/Pessoa/FormPessoa.php'; // Include da View. Note que a variável $model está disponível na View.
+        include 'View/modules/Pessoa/FormPessoa.php'; 
     }
 
-
-    /**
-     * Preenche um Model para que seja enviado ao banco de dados para salvar.
-     */
     public static function save()
     {
-       include 'Model/PessoaModel.php'; // inclusão do arquivo model.
-
+       include 'Model/PessoaModel.php'; 
        
        $model = new PessoaModel();
 
@@ -58,8 +48,7 @@ class PessoaController
 
         $model = new PessoaModel();
 
-        $model->delete( (int) $_GET['id'] ); // Enviando a variável $_GET como inteiro para o método delete
-
-        header("Location: /pessoa"); // redirecionando o usuário para outra rota.
+        $model->delete( (int) $_GET['id'] ); 
+        header("Location: /pessoa"); 
     }
 } 

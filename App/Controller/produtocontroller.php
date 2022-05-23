@@ -14,8 +14,6 @@ class ProdutoController
         include 'View/modules/Produto/ListaProduto.php'; 
     }
 
-
-   
     public static function form()
     {
         include 'Model/ProdutoModel.php'; 
@@ -27,9 +25,7 @@ class ProdutoController
         include 'View/modules/Produto/FormProduto.php'; 
     }
 
-
-   
-    public static function save()
+     public static function save()
     {
        include 'Model/ProdutoModel.php'; 
        $model = new ProdutoModel();
@@ -44,8 +40,6 @@ class ProdutoController
        header("Location: /Produto"); 
     }
 
-
-   
     public static function delete()
     {
         include 'Model/ProdutoModel.php'; 

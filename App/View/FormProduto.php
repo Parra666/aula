@@ -23,8 +23,8 @@
             <label for="data_fabricacao">:</label>
             <input id="datafabri" name="data de fabrição" value="<?= $model->data ?>" type="date" />
 
-            <label for="data_validade">Data Nascimento:</label>
-            <input id="data_nascimento" value="<?= $model->data_nascimento ?>" name="data_nascimento" type="date" />
+            <label for="data_validade">:</label>
+            <input id="data_validade" value="<?= $model->data_validade ?>" name="data_validade" type="date" />
 
             <button type="submit">Salvar</button>
         </form>

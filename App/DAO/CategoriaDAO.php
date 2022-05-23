@@ -17,25 +17,21 @@ class CategoriaDAO
      public function insert(CategoriaModel $model)
     {
         
-        $sql = "INSERT INTO Categoria (nome, Comidas, Bebidas) VALUES (?, ?, ?) ";
+        $sql = "INSERT INTO Categoria (nome) VALUES (?) ";
         $stmt = $this->conexao->prepare($sql);
 
 
         
         $stmt->bindValue(1, $model->nome);
-        $stmt->bindValue(2, $model->Comidas);
-        $stmt->bindValue(3, $model->Bebidas);
-        $stmt->execute();
+        
     }
 
     public function update(CategoriaModel $model)
     {
-        $sql = "UPDATE Categoria SET nome=?, Comidas=?, Bebidas=? WHERE id=? ";
+        $sql = "UPDATE Categoria SET nome=? WHERE id=? ";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $model->nome);
-        $stmt->bindValue(2, $model->Comidas);
-        $stmt->bindValue(3, $model->Bebidas);
         $stmt->bindValue(4, $model->id);
         $stmt->execute();
     }
