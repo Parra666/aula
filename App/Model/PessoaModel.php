@@ -56,8 +56,6 @@ class PessoaModel
         
     }
 
-
-    
     public function delete(int $id)
     {
         include 'DAO/PessoaDAO.php'; 

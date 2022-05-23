@@ -6,7 +6,7 @@ $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 switch($url)
 {
-    case '/':
+    case "/";
         echo "página inicial";
     break;
 
@@ -35,14 +35,13 @@ switch($url)
     break;
    
    
+    
+    
     case '/':
         echo "página inicial";
     break;
 
-    
-    
-    
-    case '/pessoa':
+     case '/produto':
         
         produtocontroller::index();
     break;
@@ -66,7 +65,7 @@ switch($url)
     
     
     
-    case '/pessoa':
+    case '/Categoria':
         
         CategoriasController::index();
     break;
