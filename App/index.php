@@ -2,6 +2,12 @@
 
 include 'Controller/PessoaController.php';
 
+use App\Controller\CategoriasController;
+use App\Controller\PessoaController;
+use App\Controller\ProdutoController;
+
+
+
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 switch($url)

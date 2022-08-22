@@ -1,5 +1,7 @@
 <?php
-
+namespace App\DAO;
+use App\Model\PessoaModel;
+use \PDO;
 
 class PessoaDAO
 {
