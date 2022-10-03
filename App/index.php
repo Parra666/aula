@@ -6,7 +6,7 @@ use App\Controller\CategoriasController;
 use App\Controller\PessoaController;
 use App\Controller\ProdutoController;
 
-
+use 
 
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
