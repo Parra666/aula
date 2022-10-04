@@ -1,34 +1,45 @@
 <?php
+
 namespace App\Controller;
+
+
 use App\Model\PessoaModel;
 
-class PessoaController 
+
+class PessoaController extends Controller
 {
-    
+
+
     public static function index()
     {
-        include 'Model/PessoaModel.php'; 
+        parent::isAuthenticated();
+
         $model = new PessoaModel(); 
         $model->getAllRows(); 
 
-        include 'View/modules/Pessoa/ListaPessoa.php'; 
+        parent::render('Pessoa/ListaPessoa', $model);
     }
+
+
 
     public static function form()
     {
-        include 'Model/PessoaModel.php'; 
+        parent::isAuthenticated();
+
         $model = new PessoaModel();
 
-        if(isset($_GET['id'])) 
+        if(isset($_GET['id']))
             $model = $model->getById( (int) $_GET['id']); 
-
-        include 'View/modules/Pessoa/FormPessoa.php'; 
+         
+        
+        parent::render('Pessoa/FormPessoa', $model);
     }
+
 
     public static function save()
     {
-       include 'Model/PessoaModel.php'; 
-       
+        parent::isAuthenticated();
+
        $model = new PessoaModel();
 
        $model->id =  $_POST['id'];
@@ -37,19 +48,18 @@ class PessoaController
        $model->data_nascimento = $_POST['data_nascimento'];
 
        $model->save(); 
-
        header("Location: /pessoa"); 
     }
 
 
-   
     public static function delete()
     {
-        include 'Model/PessoaModel.php';
-
+        parent::isAuthenticated();
+        
         $model = new PessoaModel();
 
         $model->delete( (int) $_GET['id'] ); 
+
         header("Location: /pessoa"); 
     }
-} 
+}
